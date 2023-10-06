@@ -1,0 +1,126 @@
+*body {
+  margin: 0px;
+  padding: 0px;
+}
+.navbar {
+  display: flex;
+  background-color: #353765;
+  justify-content: space-between;
+}
+.navbar h1 {
+  color: white;
+  padding: 15px;
+}
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 15px;
+  margin: 10px;
+}
+.navbar li a {
+  text-decoration: none;
+  color: white;
+}
+.contain {
+  display: flex;
+  flex-direction: column;
+  background-image: url(img/picture.jpeg);
+  align-items: center;
+  height: 550px;
+  padding: 25px;
+}
+.contain h1 {
+  color: #353765;
+  padding: 15px;
+  font-size: 50px;
+  margin: 30px;
+}
+
+.contain p {
+  color: black;
+  padding: 5px;
+  font-size: 25px;
+  margin: 20px;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between; /* This creates space between the buttons */
+  width: 100%; /* Ensure the buttons span the container's width */
+  max-width: 240px;
+  margin: 60px;
+}
+button {
+  width: 120px;
+  height: 40px;
+  margin: 35px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #353765;
+  color: white;
+}
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  background-image: url(img/picture.jpeg);
+
+  height: 1000px;
+}
+.profile {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  background-image: url(img/picture.jpeg);
+  height: 550px;
+  padding: 10px;
+}
+.team {
+  display: flex;
+  flex-direction: column;
+  background-image: url(img/picture.jpeg);
+}
+.notification {
+  display: flex;
+  flex-direction: column;
+  background-image: url(img/picture.jpeg);
+}
+.heading {
+  text-align: center;
+  color: #353765;
+  margin: 20px;
+}
+#task-list {
+  padding: 20px;
+}
+#task-filters {
+  padding: 20px;
+}
+#task-details {
+  padding: 20px;
+}
+#task-actions {
+  padding: 20px;
+}
+#task-create {
+  padding: 20px;
+}
+#profile-information {
+  padding: 20px;
+}
+#password-settings {
+  padding: 20px;
+}
+#team-management {
+  padding: 20px;
+}
+#assign-tasks {
+  padding: 20px;
+}
+#team-selection {
+  padding: 20px;
+}
+#team-task-list {
+  padding: 20px;
+}
+#notifications-list {
+  padding: 20px;
+}

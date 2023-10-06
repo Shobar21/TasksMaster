@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskMaster</title>
+    <link rel="stylesheet" href="Style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <h1>TasksMaster</h1>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Tasks</a></li>
+        <li><a href="#">Teams</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Notifications</a></li>
+      </ul>
+    </nav>
+    <div class="contain">
+      <h1>Welcome to TasksMaster</h1>
+      <p>
+        Your one-stop destination for efficient project planning, collaboration,
+        and success.<br />
+        Take control of your projects and achieve excellence with us.
+      </p>
+      <div class="button-container">
+        <button type="button">New Task</button>
+        <button type="button">Recent Task</button>
+      </div>
+    </div>
+    <div class="maincontainer">
+      <main>
+        <h1 class="heading">Task management</h1>
+        <!-- Task List -->
+        <section id="task-list">
+          <h2>Task List</h2>
+          <!-- Display a list of tasks with columns -->
+          <table>
+            <thead>
+              <tr>
+                <th>Task Name</th>
+                <th>Due Date</th>
+                <th>Priority</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="task-list-body">
+              <!-- Task rows will be dynamically generated here -->
+              <tr>
+                <td>Task 1</td>
+                <td>2023-10-15</td>
+                <td>High</td>
+                <td>In Progress</td>
+              </tr>
+              <tr>
+                <!-- Action buttons for each task -->
+                <td><button class="view-task">View</button></td>
+                <td><button class="edit-task">Edit</button></td>
+                <td><button class="delete-task">Delete</button></td>
+              </tr>
+              <!-- Add more task rows dynamically -->
+            </tbody>
+          </table>
+        </section>
+        <!-- Task Filters -->
+        <section id="task-filters">
+          <h2>Task Filters</h2>
+          <!-- Filter options (e.g., team, priority, due date) -->
+          <label for="team-filter">Team:</label>
+          <select id="team-filter">
+            <option value="all">All Teams</option>
+            <option value="all">Team 1</option>
+            <option value="all">Team 2</option>
+            <!-- Add team options dynamically if applicable -->
+          </select>
+
+          <label for="priority-filter">Priority:</label>
+          <select id="priority-filter">
+            <option value="all">All Priorities</option>
+            <option value="all">small</option>
+            <option value="all">high</option>
+            <!-- Add priority options dynamically if applicable -->
+          </select>
+
+          <label for="due-date-filter">Due Date:</label>
+          <input type="date" id="due-date-filter" />
+
+          <div>
+            <button id="clear-filters">Clear Filters</button>
+          </div>
+        </section>
+
+        <!-- Task Details -->
+        <section id="task-details">
+          <h2>Task Details</h2>
+          <!-- Detailed task information will be displayed here -->
+          <table class="table mt-4">
+            <thead>
+              <tr>
+                <th>Task Name</th>
+                <th>Task Description</th>
+                <th>Assignment: User/Team</th>
+                <th>Due Date: Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Frontend</td>
+                <td>Using html css</td>
+                <td>Raj and Ayana</td>
+                <td>25 oct 2023</td>
+              </tr>
+              <tr>
+                <td>Backend</td>
+                <td>using Reactjs</td>
+                <td>Manesh and Ayana</td>
+                <td>25 oct 2023</td>
+              </tr>
+              <tr>
+                <td>Mobile-development</td>
+                <td>Using flutter</td>
+                <td>Raj and Naina</td>
+                <td>25 oct 2023</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div id="task-actions">
+            <button id="edit-task">Edit Task</button>
+            <button id="delete-task">Delete Task</button>
+          </div>
+        </section>
+        <!-- Task create -->
+        <section id="task-create">
+          <h2>Task create</h2>
+          <form id="task-form">
+            <div>
+              <label for="task-title">Task Title:</label>
+              <input type="text" id="task-title" name="task-title" required />
+            </div>
+            <div>
+              <label for="task-description">Description:</label>
+              <textarea
+                id="task-description"
+                name="task-description"
+                required
+              ></textarea>
+            </div>
+            <div><button type="submit">Create Task</button></div>
+          </form>
+        </section>
+      </main>
+    </div>
+    <div class="profile">
+      <h1 class="heading">User Profile</h1>
+
+      <!-- User Profile Information -->
+      <section id="profile-information">
+        <h2>Profile Information</h2>
+        <form id="edit-profile-form">
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="" required />
+          </div>
+
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="" required />
+          </div>
+
+          <div>
+            <label for="profile-picture">Profile Picture:</label>
+            <input type="file" id="profile-picture" name="profile-picture" />
+          </div>
+
+          <button type="submit">Save Changes</button>
+        </form>
+      </section>
+
+      <!-- Password Settings -->
+      <section id="password-settings">
+        <h2>Password Settings</h2>
+        <form id="change-password-form">
+          <div>
+            <label for="current-password">Current Password:</label>
+            <input
+              type="password"
+              id="current-password"
+              name="current-password"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="new-password">New Password:</label>
+            <input
+              type="password"
+              id="new-password"
+              name="new-password"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="confirm-password">Confirm Password:</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              required
+            />
+          </div>
+
+          <button type="submit">Change Password</button>
+        </form>
+      </section>
+    </div>
+    <div class="team">
+      <h1 class="heading">Team Collaboration</h1>
+
+      <!-- Create or Join Teams -->
+      <section id="team-management">
+        <h2>Create or Join Teams</h2>
+
+        <!-- Create Team Form -->
+        <form id="create-team-form">
+          <label for="team-name">Team Name:</label>
+          <input type="text" id="team-name" name="team-name" required />
+
+          <button type="submit">Create Team</button>
+        </form>
+
+        <!-- Join Team Form -->
+        <form id="join-team-form">
+          <label for="team-code">Team Code:</label>
+          <input type="text" id="team-code" name="team-code" required />
+
+          <button type="submit">Join Team</button>
+        </form>
+      </section>
+
+      <!-- Assign Tasks to Team Members -->
+      <section id="assign-tasks">
+        <h2>Assign Tasks to Team Members</h2>
+        <form id="assign-task-form">
+          <label for="team-select">Select Team:</label>
+          <select id="team-select" name="team-select">
+            <!-- Team options will be dynamically populated here -->
+            <option value="team1">Team 1</option>
+            <option value="team2">Team 2</option>
+            <!-- Add more teams dynamically -->
+          </select>
+
+          <label for="task-name">Task Name:</label>
+          <input type="text" id="task-name" name="task-name" required />
+
+          <label for="assign-to">Assign to:</label>
+          <select id="assign-to" name="assign-to">
+            <!-- Team members will be dynamically populated here -->
+            <option value="user1">User 1</option>
+            <option value="user2">User 2</option>
+            <!-- Add more members dynamically -->
+          </select>
+
+          <button type="submit">Assign Task</button>
+        </form>
+      </section>
+      <h1 class="heading">Team Task List</h1>
+
+      <!-- Team Selection -->
+      <section id="team-selection">
+        <h2>Select Team</h2>
+        <form id="team-select-form">
+          <label for="team-select">Select Team:</label>
+          <select id="team-select" name="team-select">
+            <!-- Team options will be dynamically populated here -->
+            <option value="team1">Team 1</option>
+            <option value="team2">Team 2</option>
+            <!-- Add more teams dynamically -->
+          </select>
+          <button type="submit">View Tasks</button>
+        </form>
+      </section>
+
+      <!-- Team Task List -->
+      <section id="team-task-list">
+        <h2>Team Task List</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Task Name</th>
+              <th>Due Date</th>
+              <th>Priority</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="task-list-body">
+            <!-- Team-specific task rows will be dynamically generated here -->
+            <tr>
+              <td>Task 1</td>
+              <td>2023-10-15</td>
+              <td>High</td>
+              <td>In Progress</td>
+            </tr>
+            <!-- Add more task rows dynamically -->
+          </tbody>
+        </table>
+      </section>
+    </div>
+    <div class="notification">
+      <!-- Notifications List -->
+      <section id="notifications-list">
+        <h1 class="heading">Notifications</h1>
+        <ul id="notifications">
+          <!-- Notification items will be dynamically generated here -->
+          <li class="notification">
+            <p class="notification-text">New task assigned: Task 1</p>
+            <p class="notification-date">Oct 15, 2023 09:30 AM</p>
+          </li>
+          <li class="notification">
+            <p class="notification-text">New comment on Task 2</p>
+            <p class="notification-date">Oct 14, 2023 03:45 PM</p>
+          </li>
+          <!-- Add more notifications dynamically -->
+        </ul>
+      </section>
+    </div>
+    <script>
+      // Add an event listener to the Clear Filters button
+      document
+        .getElementById('clear-filters')
+        .addEventListener('click', function () {
+          // Reset the selected value of the team filter to the default "All Teams"
+          document.getElementById('team-filter').value = 'all'
+
+          // Reset the selected value of the priority filter to the default "All Priorities"
+          document.getElementById('priority-filter').value = 'all'
+
+          // Reset the value of the due date filter to an empty string
+          document.getElementById('due-date-filter').value = ''
+        })
+    </script>
+  </body>
+</html>
